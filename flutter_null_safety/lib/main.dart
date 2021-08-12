@@ -54,10 +54,25 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    iCanHoldNull = 'Some Value';
+
     // 4.2
     plusTen(iCantHoldNull);
     // 4.3
     // plusTen(iCanHoldNull); [This is ellegal. Because we are only excepting non-null-able value]
+
+    // 5. What if we need to iCanHoldNull anywhere?
+
+    // 5.1 We check it's null or not then we will use it if not null
+    if (iCanHoldNull != null) {
+      //plusTen(iCanHoldNull);    [I don't know why it's not working ;(]
+    }
+
+    // 5.2 Or we can asign any other value if this is null
+    plusTen(iCanHoldNull ?? 'Other Value');
+
+    // 5.3 We can forcibly [It's can be failed. Only use this when you are sure it's not null]
+    plusTen(iCanHoldNull!);
 
     setState(() {
       _counter++;
