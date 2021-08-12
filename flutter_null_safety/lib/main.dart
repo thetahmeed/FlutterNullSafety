@@ -89,6 +89,9 @@ class _MyHomePageState extends State<MyHomePage> {
     // 6.2 Or we can send both value
     makeCoffee('value1', 'value2');
 
+    // 7. Learn more
+    // https://dart.dev/null-safety/understanding-null-safety
+
     setState(() {
       _counter++;
     });
