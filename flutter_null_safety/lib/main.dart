@@ -51,6 +51,15 @@ class _MyHomePageState extends State<MyHomePage> {
     print(result);
   }
 
+  // 6. Here coffee can't be null but dairy can be null
+  makeCoffee(String coffee, [String? dairy]) {
+    if (dairy != null) {
+      print('$coffee with $dairy');
+    } else {
+      print('Black $coffee');
+    }
+  }
+
   int _counter = 0;
 
   void _incrementCounter() {
@@ -73,6 +82,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // 5.3 We can forcibly [It's can be failed. Only use this when you are sure it's not null]
     plusTen(iCanHoldNull!);
+
+    // 6.1 Here we are only sending one value while another value is null-able.
+    makeCoffee('value1');
+
+    // 6.2 Or we can send both value
+    makeCoffee('value1', 'value2');
 
     setState(() {
       _counter++;
