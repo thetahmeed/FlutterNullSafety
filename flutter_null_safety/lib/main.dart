@@ -27,6 +27,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  // In this tutorial I just write what I understand about null safety on dart/flutter till aug 12, 2021
+
+  // There can be two types of variable declarations
+  // 1. Can be null
+  int? usersFavoriteNumber;
+  // Here usersFavoriteNumber can be null.
+
+  // 2. Can't be null
+  int userAge = 0;
+  // Here userAge can't be null.
+
   int _counter = 0;
 
   void _incrementCounter() {
