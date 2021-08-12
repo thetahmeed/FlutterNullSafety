@@ -38,9 +38,27 @@ class _MyHomePageState extends State<MyHomePage> {
   int userAge = 0;
   // Here userAge can't be null.
 
+  String? iCanHoldNull;
+  String iCantHoldNull = 'I am not null';
+
+  // 3. Here iCantHoldNull can be use for any place. Null-able or Non-Null-able area
+  // 4. But iCanHoldNull can only be use where they except only Null-able value
+
+  // 4.1
+  void plusTen(String s) {
+    var result = s + "+ 10";
+
+    print(result);
+  }
+
   int _counter = 0;
 
   void _incrementCounter() {
+    // 4.2
+    plusTen(iCantHoldNull);
+    // 4.3
+    // plusTen(iCanHoldNull); [This is ellegal. Because we are only excepting non-null-able value]
+
     setState(() {
       _counter++;
     });
